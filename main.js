@@ -39,7 +39,7 @@ function addRandomFlash() {
     flashableElements.forEach(selector => {
         const elements = document.querySelectorAll(selector);
         elements.forEach(el => {
-            if (Math.random() < 0.3) {
+            if (Math.random() < 0.75) {
                 el.classList.add('flash');
                 setTimeout(() => {
                     el.classList.remove('flash');
