@@ -1,0 +1,21 @@
+.blog {
+    background-color: #111;
+}
+
+.blog-nav {
+    display: grid;
+    justify-content: center;
+    text-align: center;     
+}
+
+.blog-nav-item:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.blog-content {
+}
+
+.blog-content-hide {
+    
+}
