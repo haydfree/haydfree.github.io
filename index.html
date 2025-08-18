@@ -7,67 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">HAYDFREE.COM</a>
-            </div>
-            <ul class="nav-menu" id="nav-menu">
-                <li class="nav-item">
-                    <a href="#home" class="nav-link">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#about" class="nav-link">ABOUT</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#skills" class="nav-link">SKILLS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#projects" class="nav-link">PROJECTS</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#experience" class="nav-link">EXPERIENCE</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#contact" class="nav-link">CONTACT</a>
-                </li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1 class="hero-title">
-                    it's me biTcHeS <span class="highlight">HAYDEN "STACK-SMASH" FREEMAN</span>
-                </h1>
-                <p class="hero-subtitle">Jack of All Trades<br>Master of Everything</p>
-                <p class="hero-description">
-                    I build stuff that's fun to build, because building stuff that's fun to build is fun, and 
-                    having fun building stuff that's fun building fun stuff to fun stuff build. 
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-secondary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-img">
-                    <img src="assets/profile-img.jpg" alt="my face, it is i, leader of men">
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
+    <div class="nav-placeholder"></div>
+    <div class="hero-placeholder"></div>
+    
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -97,6 +40,9 @@
                             <span class="stat-label">Projects Abandoned</span>
                         </div>
                     </div>
+                </div>
+                <div class="btn-centered-container">
+                    <a href="about.html" class="btn btn-secondary btn-centered">Read More</a>
                 </div>
             </div>
         </div>
@@ -137,6 +83,9 @@
                     </div>
                 </div>
             </div>
+            <div class="btn-centered-container">
+                <a href="skills.html" class="btn btn-secondary btn-centered">Read More</a>
+            </div>
         </div>
     </section>
 
@@ -147,7 +96,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="assets/circuitry.png" src="showcase of circuitry project"> 
+                        <img src="assets/circuitry.png" alt="showcase of circuitry project"> 
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Circuitry</h3>
@@ -184,6 +133,49 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/stat-arb.png" alt="showcase of stat-arb project">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Statistical Arbitrage</h3>
+                        <p class="project-description">
+                            Make money while you sleep. Trade like the hedge funds. This program uses advanced statistical
+                            techniques to identify pairs trades between cointegrated assets. 
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas/Numpy/Matplotlib/ScikitLearn</span>
+                        </div>
+                        <div class="project-links">
+                            <!--<a href="#" class="project-link">Live Demo</a>-->
+                            <a href="https://github.com/haydfree/stat-arb" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="assets/term-srs.png" alt="showcase of term-srs project">
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Terminal Spaced-Repetition</h3>
+                        <p class="project-description">
+                            Love Anki, but despise bloated software? Me too. This here's an SRS in 200 lines of code. 
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                        </div>
+                        <div class="project-links">
+                            <!--<a href="#" class="project-link">Live Demo</a>-->
+                            <a href="https://github.com/haydfree/term-srs" class="project-link">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-centered-container">
+                <a href="projects.html" class="btn btn-secondary btn-centered">Read More</a>
             </div>
         </div>
     </section>
@@ -206,69 +198,15 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's work together!</h3>
-                    <p>
-                        I'm always interested in hearing about new opportunities and projects. 
-                        Feel free to reach out.
-                    </p>
-                    <div class="contact-methods">
-                        <div class="contact-method">
-                            <span class="contact-icon">📧</span>
-                            <span class="contact-text">mail@haydfree.com</span>
-                        </div>
-                        <div class="contact-method">
-                            <span class="contact-icon">📱</span>
-                            <span class="contact-text">+1 (251) 235-1202</span>
-                        </div>
-                        <div class="contact-method">
-                            <span class="contact-icon">📍</span>
-                            <span class="contact-text">Gulf Shores, AL</span>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://github.com/haydfree" class="social-link">GitHub</a>
-                        <a href="https://linkedin.com/in/haydfree" class="social-link">LinkedIn</a>
-                        <a href="https://x.com/haydfree" class="social-link">Twitter</a>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
+            <div class="btn-centered-container">
+                <a href="experience.html" class="btn btn-secondary btn-centered">Read More</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Hayden Freeman. All rights reserved.</p>
-                <p>Built with ❤️  using HTML, CSS, and JavaScript</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
+    <div class="contact-placeholder"></div>
+    <div class="footer-placeholder"></div>
+    <script src="src/components.js"></script>
+    <script src="src/main.js"></script>
 </body>
 </html>

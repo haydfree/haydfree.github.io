@@ -1,0 +1,12 @@
+{
+    "postNum": 1,
+    "posts": [
+        {
+            "id": "hello-world",
+            "title": "My First Blog Post",
+            "date": "2025-08-17",
+            "summary": "A little about me, and a check 1-2 for serving content on a static website.",
+            "tags": ["first", "introduction", "greetings", "about"] 
+        }
+    ]
+}

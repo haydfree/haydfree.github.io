@@ -167,13 +167,18 @@ body {
     color: #000;
 }
 
+.btn-centered-container {
+    padding-top: 10px;
+    text-align: center;
+}
+
 .profile-img {
     margin: 30px 0;
 }
 
 .profile-img img {
-    width: 150px;
-    height: 150px;
+    width: 12vw;
+    height: 21.3vw;
     border: 3px solid #00ff00;
     filter: contrast(200%) brightness(80%);
 }
@@ -210,6 +215,25 @@ section {
     margin-bottom: 40px;
     color: #ffff00;
     text-transform: uppercase;
+}
+
+/* Blog Section */
+.blog-nav {
+    display: grid;
+    justify-content: center;
+    text-align: center;     
+}
+
+.blog-nav-item:hover {
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.blog-content {
+}
+
+.blog-content-hide {
+    
 }
 
 /* About Section */
@@ -294,7 +318,7 @@ section {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
     gap: 30px;
 }
 
@@ -306,10 +330,9 @@ section {
 
 .project-image img {
     width: 100%;
-    height: 150px;
     object-fit: cover;
     border: 1px solid #00ff00;
-    filter: contrast(150%) brightness(70%);
+    filter: contrast(150%) brightness(150%);
 }
 
 .project-title {
@@ -458,7 +481,7 @@ section {
     width: 100%;
     background-color: #222;
     border: 1px solid #00ff00;
-    color: #00ff00;
+    color: #ffffff;
     padding: 10px;
     font-family: 'Courier New', monospace;
     font-size: 11px;

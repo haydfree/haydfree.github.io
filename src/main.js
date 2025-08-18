@@ -1,33 +1,30 @@
-// Mobile nav toggle
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
+document.addEventListener('click', function(e) {
+    // mobile nav
+    if (e.target.id === 'hamburger') { 
+        const navMenu = document.getElementById('nav-menu');
+        navMenu.classList.toggle('active');
+    }
 
-hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-});
-
-// Close mobile nav when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-    });
-});
-
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+    if (e.target.classList.contains('nav-link')) {
+        const navMenu = document.getElementById('nav-link');
+        if (navMenu) navMenu.classList.remove('active');
+        
+        // smooth scrolling cuz apparently this is a thing
+        const href = e.target.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
-    });
+    }
 });
 
-// Random flashing text effect for fun elements
+// flash effect
 function addRandomFlash() {
     const flashableElements = [
         '.hero-subtitle',
@@ -35,10 +32,11 @@ function addRandomFlash() {
         '.timeline-title',
         '.project-title'
     ];
-    
     flashableElements.forEach(selector => {
         const elements = document.querySelectorAll(selector);
+        if (!elements) {return;}
         elements.forEach(el => {
+            if (!el) {return;}
             if (Math.random() < 0.75) {
                 el.classList.add('flash');
                 setTimeout(() => {
@@ -48,18 +46,13 @@ function addRandomFlash() {
         });
     });
 }
-
-// Add random flashing every few seconds
 setInterval(addRandomFlash, 8000);
-
-// Initial flash on load
 setTimeout(addRandomFlash, 2000);
 
-// Typing effect for hero description (because why not)
+// typing effect
 function typeWriter(element, text, speed = 50) {
     let i = 0;
     element.innerHTML = '';
-    
     function type() {
         if (i < text.length) {
             element.innerHTML += text.charAt(i);
@@ -67,11 +60,19 @@ function typeWriter(element, text, speed = 50) {
             setTimeout(type, speed);
         }
     }
-    
     type();
 }
 
-// Apply typing effect to description on load
+document.addEventListener('componentsLoaded', () => {
+    const heroDesc = document.querySelector('.hero-description');
+    if (heroDesc) {
+        const originalText = heroDesc.textContent;
+        typeWriter(heroDesc, originalText, 30);
+    }
+    addRandomFlash();
+});
+
+
 window.addEventListener('load', () => {
     const heroDesc = document.querySelector('.hero-description');
     if (heroDesc) {
@@ -80,14 +81,15 @@ window.addEventListener('load', () => {
     }
 });
 
-// Contact form submission (basic alert since no backend)
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+// TODO: add email forwarding
+document.addEventListener('submit', function(e) {
+    if (e.target.id !== "contact-form") {return;}
     e.preventDefault();
     
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const subject = e.target.subject.value;
+    const message = e.target.message.value;
     
     if (name && email && subject && message) {
         alert('MESSAGE TRANSMITTED TO THE STACK-SMASH OVERLORD\n\nYour message has been logged in the terminal. Expect a response when the low-level gods smile upon us.');
@@ -97,11 +99,12 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     }
 });
 
-// Add some console messages for the true low-level devs who check
+// easter egg console.logs + ctf challenge 
 console.log('='.repeat(60));
 console.log('STACK-SMASH TERMINAL INITIALIZED');
 console.log('='.repeat(60));
 console.log('Welcome to haydfree.com');
 console.log('Built with raw HTML/CSS/JS because frameworks are for the weak');
-console.log('Check the source if you want to see some real code');
+console.log('There is a vulnerability intentionally added somewhere in this website.');
+console.log('Can you find the flag? or are you trash?');
 console.log('='.repeat(60));
