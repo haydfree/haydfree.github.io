@@ -25,13 +25,7 @@ document.addEventListener('click', function(e) {
 });
 
 // flash effect
-function addRandomFlash() {
-    const flashableElements = [
-        '.hero-subtitle',
-        '.section-title',
-        '.timeline-title',
-        '.project-title'
-    ];
+function addRandomFlash(flashableElements) {
     flashableElements.forEach(selector => {
         const elements = document.querySelectorAll(selector);
         if (!elements) {return;}
@@ -69,16 +63,11 @@ document.addEventListener('componentsLoaded', () => {
         const originalText = heroDesc.textContent;
         typeWriter(heroDesc, originalText, 30);
     }
-    addRandomFlash();
-});
-
-
-window.addEventListener('load', () => {
-    const heroDesc = document.querySelector('.hero-description');
-    if (heroDesc) {
-        const originalText = heroDesc.textContent;
-        typeWriter(heroDesc, originalText, 30);
-    }
+    const flashableElements = [
+        '.hero-subtitle','.section-title','.timeline-title','.project-title'
+    ];
+    const feh = document.querySelectorAll(flashableElements); 
+    if (feh) addRandomFlash(flashableElements);
 });
 
 // TODO: add email forwarding
