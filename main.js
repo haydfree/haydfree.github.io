@@ -1,39 +1,3 @@
-// flash effect
-const delay = 8000;
-function addRandomFlash(flashableElements) {
-    if (!flashableElements) {
-        flashableElements = ['.section-title', '.project-title', '.timeline-title', 
-            '.education-institution', '.skill-category-title', '.nav-link', '.nav-logo a']
-    }
-    flashableElements.forEach(selector => {
-        const elements = document.querySelectorAll(selector);
-        elements.forEach(el => {
-            if (Math.random() < 0.75) {
-                el.classList.add('flash');
-                setTimeout(() => {
-                    el.classList.remove('flash');
-                }, Math.random() * delay);
-            }
-        });
-    });
-}
-setInterval(() => addRandomFlash(), delay);
-
-// typing effect
-function typeWriter(element) {
-    let i = 0;
-    const text = element.textContent;
-    element.innerHTML = '';
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, 50);
-        }
-    }
-    type();
-}
-
 // TODO: add email forwarding
 function formSubmit(e) {
     if (e.target.id !== "contact-form") {return;}

@@ -1,12 +1,13 @@
+import {flashElementsAll} from '/src/utils.js';
+
 class ExperienceT extends HTMLElement {
     async connectedCallback() {
         const res = await fetch("/components/experience.html");
         const html = await res.text();
         this.innerHTML = html;
 
-        if (this.querySelector(".timeline-title")) {
-            addRandomFlash([".timeline-title"]);
-        }
+        const fe = ".timeline-title";
+        if (this.querySelector(fe)) {flashElementsAll([fe]);}
     }
 }
 

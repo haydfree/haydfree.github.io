@@ -1,3 +1,5 @@
+import {flashElementsAll} from '/src/utils.js';
+
 class NavT extends HTMLElement {
     async connectedCallback() {
         const res = await fetch("/components/nav.html");
@@ -8,13 +10,8 @@ class NavT extends HTMLElement {
             this.querySelector("#nav-menu")?.classList.toggle("active");
         });
 
-        if (this.querySelector(".nav-link")) {
-            addRandomFlash([".nav-link"]);
-        }
-
-        if (this.querySelector(".nav-logo a")) {
-            addRandomFlash([".nav-logo a"]);
-        }
+        const fes = [".nav-link", ".nav-logo a"];
+        flashElementsAll([fes]);
     }
 }
 

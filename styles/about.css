@@ -1,9 +1,14 @@
 .about {
 }
 
+
 .about-content {
     max-width: 600px;
     margin: 0 auto;
+}
+
+.page-about-header {
+    padding-top: 20px;
 }
 
 .about-text p {
