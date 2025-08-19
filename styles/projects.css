@@ -2,9 +2,13 @@
     background-color: #111;
 }
 
+.page-projects-content {
+    padding-top: 20px;
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30vw, 1fr));
+    justify-content: center;
     gap: 30px;
 }
 
@@ -28,9 +32,13 @@
     text-transform: uppercase;
 }
 
-.project-description {
+.project-description,
+.page-projects-text {
     font-size: 11px;
     margin-bottom: 15px;
+}
+.page-projects-text {
+    margin-top: 15px;
 }
 
 .project-tech {

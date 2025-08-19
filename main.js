@@ -1,4 +1,21 @@
-// TODO: add email forwarding
+import {flashElementsAll, delay} from '/src/utils.js';
+
+function flash() {
+    const fes = ['.section-title'];
+    let id = 0;
+    flashElementsAll(fes);
+    id = setInterval(() => {
+        flashElementsAll(fes);
+    }, delay);
+}
+
+// flash before web components loaded (for static pages)
+flash();
+document.addEventListener("componentsLoaded", () => {
+    // flash after web components loaded
+    flash();
+});
+
 function formSubmit(e) {
     if (e.target.id !== "contact-form") {return;}
     e.preventDefault();

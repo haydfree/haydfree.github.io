@@ -1,4 +1,4 @@
-import {flashElementsAll} from '/src/utils.js';
+import {flashElementsAll, delay} from '/src/utils.js';
 
 class SkillsT extends HTMLElement {
     async connectedCallback() {
@@ -7,7 +7,12 @@ class SkillsT extends HTMLElement {
         this.innerHTML = html;
 
         const fe = ".skill-category-title";
-        if (this.querySelector(fe)) {flashElementsAll([fe]);}
+        let id = 0;
+        if (this.querySelector(fe)) {
+            flashElementsAll([fe]);
+            id = setInterval(() => {flashElementsAll([fe]);}, delay);
+        }
+        document.dispatchEvent(new Event("componentsLoaded"));
     }
 }
 

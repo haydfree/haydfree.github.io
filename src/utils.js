@@ -1,5 +1,5 @@
 // flash effect
-const delay = 8000;
+export const delay = 8000;
 export function flashElement(selector) {
     const element = document.querySelector(selector);
     element.classList.add('flash');

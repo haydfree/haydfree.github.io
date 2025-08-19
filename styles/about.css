@@ -1,9 +1,7 @@
 .about {
 }
 
-
 .about-content {
-    max-width: 600px;
     margin: 0 auto;
 }
 
@@ -11,9 +9,10 @@
     padding-top: 20px;
 }
 
-.about-text p {
+.about-text p,
+p {
     margin-bottom: 20px;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .about-stats {

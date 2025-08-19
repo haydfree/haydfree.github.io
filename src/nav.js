@@ -1,4 +1,4 @@
-import {flashElementsAll} from '/src/utils.js';
+import {flashElementsAll, delay} from '/src/utils.js';
 
 class NavT extends HTMLElement {
     async connectedCallback() {
@@ -11,7 +11,11 @@ class NavT extends HTMLElement {
         });
 
         const fes = [".nav-link", ".nav-logo a"];
-        flashElementsAll([fes]);
+        let id = 0;
+        if (this.querySelectorAll(fes)) {
+            flashElementsAll(fes);
+            id = setInterval(() => {flashElementsAll(fes);}, delay);
+        }
     }
 }
 

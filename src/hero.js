@@ -6,8 +6,8 @@ class HeroT extends HTMLElement {
         const html = await res.text();
         this.innerHTML = html;
 
-        const te = ".hero-description";
-        if (this.querySelector(te)) {typeWriter(te);}
+        const fe = ".hero-description";
+        if (this.querySelector(fe)) {typeWriter(fe);}
     }
 }
 

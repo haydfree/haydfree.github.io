@@ -67,10 +67,16 @@ section {
     text-transform: uppercase;
 }
 
+.hidden {
+    display: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
     .container {    
-        max-width: 95vw;
+        max-width: 95vw !important;
     }
 
     .hamburger {
@@ -99,17 +105,4 @@ section {
         border-bottom: 1px solid #333;
     }
     
-    .hero-title {
-        font-size: 18px;
-    }
-    
-    .contact-content {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .about-stats {
-        flex-direction: column;
-        align-items: center;
-    }
 }
