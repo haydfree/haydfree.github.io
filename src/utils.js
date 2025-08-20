@@ -27,14 +27,22 @@ export function flashElementsAll(flashableElements) {
 // typing effect
 export function typeWriter(selector) {
     let i = 0;
-    let element = document.querySelector(selector);
-    const text = element.textContent;
-    element.innerHTML = '';
+    let div = document.querySelector(selector);
+    let vis = document.createElement("div");
+    let hid = document.createElement("div");
+    const text = div.textContent;
+    hid.classList.add("hidden");
+    div.innerHTML = "";
+    vis.innerHTML  = "";
+    hid.innerHTML = text;
+    div.appendChild(vis);
+    div.appendChild(hid);
     function type() {
         if (i < text.length) {
-            element.innerHTML += text.charAt(i);
+            hid.innerHTML = text.slice(i); 
+            vis.innerHTML += text.charAt(i);
             i++;
-            setTimeout(type, 50);
+            setTimeout(type, 10);
         }
     }
     type();
