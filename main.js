@@ -1,4 +1,4 @@
-import {flashElementsAll, delay} from '/src/utils.js';
+import { flashElementsAll, delay } from '/src/utils.js';
 
 function flash() {
     const fes = ['.section-title'];
@@ -17,7 +17,7 @@ document.addEventListener("componentsLoaded", () => {
 });
 
 function formSubmit(e) {
-    if (e.target.id !== "contact-form") {return;}
+    if (e.target.id !== "contact-form") { return; }
     e.preventDefault();
 
     const name = e.target.name.value;
@@ -44,6 +44,6 @@ function easterEggs() {
     console.log('='.repeat(60));
 }
 
-document.addEventListener('submit', function(e) {
+document.addEventListener('submit', function (e) {
     formSubmit(e);
 });

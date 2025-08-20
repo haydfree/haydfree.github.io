@@ -1,3 +1,42 @@
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: rotate(45deg) translateY(0);
+    }
+
+    40% {
+        transform: rotate(45deg) translateY(-10px);
+    }
+
+    60% {
+        transform: rotate(45deg) translateY(-5px);
+    }
+}
+
+@keyframes flash {
+
+    0%,
+    50% {
+        color: #00ff00;
+    }
+
+    25% {
+        color: #ff0000;
+    }
+
+    75% {
+        color: #ffff00;
+    }
+
+    100% {
+        color: #00ffff;
+    }
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -13,14 +52,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Flashing text animation */
-@keyframes flash {
-    0%, 50% { color: #00ff00; }
-    25% { color: #ff0000; }
-    75% { color: #ffff00; }
-    100% { color: #00ffff; }
-}
-
 .flash {
     animation: flash 2s infinite !important;
 }
@@ -32,25 +63,6 @@ body {
     padding: 0 20px;
 }
 
-.scroll-indicator {
-    margin-top: 40px;
-}
-
-.scroll-arrow {
-    width: 20px;
-    height: 20px;
-    border-right: 2px solid #00ff00;
-    border-bottom: 2px solid #00ff00;
-    transform: rotate(45deg);
-    margin: 0 auto;
-    animation: bounce 2s infinite;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: rotate(45deg) translateY(0); }
-    40% { transform: rotate(45deg) translateY(-10px); }
-    60% { transform: rotate(45deg) translateY(-5px); }
-}
 
 /* Sections */
 section {
@@ -105,38 +117,4 @@ section {
 .btn-centered-container {
     padding-top: 10px;
     text-align: center;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .container {    
-        max-width: 95vw !important;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-    
-    .nav-menu {
-        display: none;
-    }
-    
-    .nav-menu.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #111;
-        border-top: 1px solid #00ff00;
-    }
-    
-    .nav-item {
-        margin: 0;
-        text-align: center;
-        padding: 10px 0;
-        border-bottom: 1px solid #333;
-    }
-    
 }

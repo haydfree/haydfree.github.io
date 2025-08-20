@@ -58,3 +58,18 @@
     border: 3px solid #00ff00;
     filter: contrast(200%) brightness(80%);
 }
+
+.scroll-indicator {
+    margin-top: 40px;
+}
+
+.scroll-arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 2px solid #00ff00;
+    border-bottom: 2px solid #00ff00;
+    transform: rotate(45deg);
+    margin: 0 auto;
+    animation: bounce 2s infinite;
+}
+

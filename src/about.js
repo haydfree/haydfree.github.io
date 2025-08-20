@@ -1,4 +1,4 @@
-import {flashElementsAll, delay} from '/src/utils.js';
+import { flashElementsAll, delay } from '/src/utils.js';
 
 class AboutT extends HTMLElement {
     async connectedCallback() {
