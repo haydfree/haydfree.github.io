@@ -20,21 +20,19 @@
             color: #f0f0f0;
             margin: 0 20vw;
         }
-        .container+.container{
-            margin-top: 1vw;
-        }
-        .container{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #nav {
+        .container+.container {margin-top: 1vw}
+        ul {
             list-style-type: none;
+            display: block; 
+            text-align: center;
+        }
+        .container, #nav {
             display: flex;
             justify-content: center;
         }
-        #nav-item+#nav-item {
-            margin-left: 1vw;
+        a {cursor: pointer}
+        #nav-item+#nav-item {margin-left: 1vw;}
+        #resume {
         }
         .hide {display: none}
     </style>
@@ -43,9 +41,9 @@
 <body>
     <div class="container" id="container-nav">
         <ul id="nav">
+            <li id="nav-item"><a onclick=show()>home</a></li>
             <li id="nav-item"><a onclick=hide("resume")>resume</a></li>
             <li id="nav-item"><a onclick=hide("about")>about</a></li>
-            <li id="nav-item"><a onclick=hide("blog")>blog</a></li>
             <li id="nav-item"><a onclick=hide("contact")>contact</a></li>
         </ul>
     </div>
@@ -59,24 +57,45 @@
         </pre>
     </div>
     <div class="container" id="container-resume">
-        <p id="resume">
-            resume
-        </p>
+        <ul id="resume">
+            <h3 class="flash">projects</h3>
+            <li id="resume-item">
+                <a href="https://github.com/haydfree/stat-arb">statistical arbitrage</a>
+            </li>
+            <li id="resume-item">
+                <a href="https://github.com/haydfree/raycast">raylib raycasting</a>
+            </li>
+            <li id="resume-item">
+                <a href="https://github.com/haydfree/dwmstatus">status bar for dwm</a>
+            </li>
+            <li id="resume-item">
+                <a href="https://github.com/haydfree/circuitry">circuitry visualizer</a>
+            </li>
+            <li id="resume-item">
+                <a href="https://github.com/haydfree/chess_engine">chess engine</a>
+            </li>
+        </ul>
     </div>
     <div class="container" id="container-about">
-        <p id="about">
-            about
-        </p>
-    </div>
-    <div class="container" id="container-blog">
-        <p id="blog">
-            blog
-        </p>
+        <ul id="about">
+            <h3 class="flash">hobbies</h3>
+            <li id="about-item">programming</li>
+            <li id="about-item">guitar</li>
+            <li id="about-item">fitness</li>
+            <li id="about-item">reading</li>
+            <li id="about-item">writing</li>
+        </ul>
     </div>
     <div class="container" id="container-contact">
-        <p id="contact">
-            contact
-        </p>
+        <ul id="contact">
+            <h3 class="flash">contact</h3>
+            <li id="contact-item">
+                <a href="mailto:emailaliaswebsite.dividers099@passinbox.com">email</a>
+            </li>
+            <li id="contact-item">
+                <a href="https://github.com/haydfree">github</a>
+            </li>
+        </ul>
     </div>
     <script>
         let hide = (name) => {
@@ -84,7 +103,16 @@
             for (i = 0; i < es.length; i++) {
                 if (es[i].id==="container-nav" || es[i].id==="container-header") {continue;}
                 if (es[i].id !== "container-"+name) {
-                    es[i].className += "hide";
+                    es[i].className += " hide";
+                }
+            }
+        }
+
+        let show = () => {
+            let es = document.body.getElementsByTagName("*");
+            for (i = 0; i < es.length; i++) {
+                if (es[i].className.includes("hide")) {
+                    es[i].className = es[i].className.replace("hide", "");
                 }
             }
         }
