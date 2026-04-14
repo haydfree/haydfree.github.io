@@ -1,37 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>haydfree.com</title>
-    <link rel="stylesheet" href="/styles.css">
+    <style>
+        @keyframes flash {
+            0%
+            25% {color: red}
+            50% {color: yellow}
+            75% {color: green}
+            100% {color: cyan}
+        }
+        .flash {animation: flash 2s infinite}
+        * {
+            padding: 0;
+            margin: 0;
+            border: 1px solid white;
+        }
+        body {
+            background-color: #131313;
+            color: #f0f0f0;
+            margin: 0 20vw;
+        }
+        .container+.container{
+            margin-top: 1vw;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #nav {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+        }
+        #nav-item+#nav-item {
+            margin-left: 1vw;
+        }
+        .hide {display: none}
+    </style>
 </head>
 
 <body>
-    <nav-t></nav-t>
-    <hero-t></hero-t>
-    <about-t></about-t>
-    <projects-t></projects-t>
-    <experience-t></experience-t>
-    <education-t></education-t>
-    <skills-t></skills-t>
-    <blog-t></blog-t>
-    <contact-t></contact-t>
-    <footer-t></footer-t>
-
-    <script type="module" src="/src/about.js"></script>
-    <script type="module" src="/src/blog.js"></script>
-    <script type="module" src="/src/contact.js"></script>
-    <script type="module" src="/src/education.js"></script>
-    <script type="module" src="/src/experience.js"></script>
-    <script type="module" src="/src/footer.js"></script>
-    <script type="module" src="/src/hero.js"></script>
-    <script type="module" src="/src/nav.js"></script>
-    <script type="module" src="/src/projects.js"></script>
-    <script type="module" src="/src/skills.js"></script>
-    <script type="module" src="/src/read-more-btn.js"></script>
-    <script type="module" src="/main.js"></script>
+    <div class="container" id="container-nav">
+        <ul id="nav">
+            <li id="nav-item"><a onclick=hide("resume")>resume</a></li>
+            <li id="nav-item"><a onclick=hide("about")>about</a></li>
+            <li id="nav-item"><a onclick=hide("blog")>blog</a></li>
+            <li id="nav-item"><a onclick=hide("contact")>contact</a></li>
+        </ul>
+    </div>
+    <div class="container" id="container-header">
+        <pre class="flash" id="header">
+ __                   __   ___
+|  |--.---.-.--.--.--|  |.'  _|.----.-----.-----.  .----.-----.--------.
+|     |  _  |  |  |  _  ||   _||   _|  -__|  -__|__|  __|  _  |        |
+|__|__|___._|___  |_____||__|  |__| |_____|_____|__|____|_____|__|__|__|
+            |_____|
+        </pre>
+    </div>
+    <div class="container" id="container-resume">
+        <p id="resume">
+            resume
+        </p>
+    </div>
+    <div class="container" id="container-about">
+        <p id="about">
+            about
+        </p>
+    </div>
+    <div class="container" id="container-blog">
+        <p id="blog">
+            blog
+        </p>
+    </div>
+    <div class="container" id="container-contact">
+        <p id="contact">
+            contact
+        </p>
+    </div>
+    <script>
+        let hide = (name) => {
+            let es = document.body.getElementsByTagName("div");
+            for (i = 0; i < es.length; i++) {
+                if (es[i].id==="container-nav" || es[i].id==="container-header") {continue;}
+                if (es[i].id !== "container-"+name) {
+                    es[i].className += "hide";
+                }
+            }
+        }
+    </script>
 </body>
-
 </html>
